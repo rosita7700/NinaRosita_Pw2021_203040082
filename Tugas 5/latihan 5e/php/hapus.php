@@ -1,21 +1,20 @@
 <?php
     require 'functions.php';
 
-    if(isset($_POST["tambah"])) {
-        if(tambah($_POST) > 0) {
-            echo "<script>
-                alert('Data Berhasil ditambahkan!');
-                document.location.href = 'admin.php';
+    $id = $_GET['id'];
+
+    if (hapus($id)>0) {
+        echo "<script>
+            alert('Data Berhasil dihapus');
+            document.location.href = 'admin.php';        
             </script>";
-        } else {
-            echo "<script>
-            alert('Data Gagal ditambahkan!');
-            document.location.href = 'admin.php';
-        </script>";
-        }
+    } else {
+        echo "<script>
+            alert('Data Gagal dihapus');
+            document.location.href = 'admin.php';        
+            </script>";
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,16 +23,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- My CSS -->
-    <link rel="stylesheet" href="../css/tambah.css" />
+    <link rel="stylesheet" href="../css/hapus.css?v2" />
 
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="../css/bootstrap.css?v2" />
-    <title>Tambah Data Barang</title>
+    <title>Hapus Data Barang</title>
 </head>
 
 <body>
-    <h1>Form Tambah Data Barang</h1>
+    <h1>Hapus Tambah Data Barang</h1>
 
+    <form>
     <form action="" method="post">
         <div class="form-group">
             <label for="img">Gambar</label>

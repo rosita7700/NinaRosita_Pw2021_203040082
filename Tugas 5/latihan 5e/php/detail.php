@@ -16,7 +16,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>latihan5c</title>
+	<title>latihan5b</title>
 </head>
 <body>
 	<div class="detail_barang">
