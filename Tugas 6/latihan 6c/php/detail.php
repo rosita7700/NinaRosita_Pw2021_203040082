@@ -21,7 +21,7 @@
 
 	<!-- bootstrap css -->
 	<link rel="stylesheet" href="../css/bootstrap.css">
-	<title>latihan6b</title>
+	<title>latihan6c</title>
 </head>
 <body>
 	<div class="detail_barang">

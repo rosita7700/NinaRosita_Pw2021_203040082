@@ -6,6 +6,24 @@
 <?php
 session_start();
 require 'functions.php';
+
+//cek cookie
+if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
+    $username = $_COOKIE['username'];
+    $hash = $_COOKIE['hash'];
+
+    // ambil user berdasarkan id
+    $result = mysqli_query(koneksi_db(), "SELECT * FROM user WHERE username = '$username'");
+    $row = mysqli_fetch_assoc($result);
+
+    // cek cookie dan username
+    if ($hash === hash('sha256', $row['id'], false)) {
+        $_SESSION['username'] =  $row['username'];
+        header("Location: admin.php");
+        exit;
+    }
+}
+
 // melakukan Pengecekan apakah user sudah melakukan login jika sudah redirect ke halaman admin
 if (isset($_SESSION['username'])) {
     header("Locaton: admin.php");
@@ -22,13 +40,19 @@ if (isset($_POST['submit'])){
         if (password_verify($password, $row['password'])) {
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['hash'] = hash('sha256', $row['id'], false);
-        }
-        if(hash('sha256', $row['id']) == $_SESSION['hash']) {
-            header("Location: admin.php");
+            // jika remember me dicentang
+            if(isset($_POST['remember'])) {
+                setcookie('username', $row['username'], time() + 60 * 60 * 24);
+                $hash = hash('sha256', $row['id']);
+                setcookie('hash', $hash, time() + 60 * 60 * 24);
+            }
+            if(hash('sha256', $row['id']) == $_SESSION['hash']) {
+                header("Location: admin.php");
+                die;
+            }
+            header("Location: ../index.php");
             die;
         }
-        header("Location: ../index.php");
-        die;
     }
     $error = true;
 }

@@ -1,4 +1,10 @@
 <?php
+    session_start();
+    if(!isset($_SESSION["username"])) {
+        header("location: login.php");
+        exit;
+    }
+        
     require 'functions.php';
 
     if(isset($_GET['cari'])) {

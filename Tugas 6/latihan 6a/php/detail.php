@@ -16,21 +16,32 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>latihan5b</title>
+	<!-- my css -->
+	<link rel="stylesheet" href="../css/detail.css?v2">
+
+	<!-- bootstrap css -->
+	<link rel="stylesheet" href="../css/bootstrap.css">
+
+	<title>latihan6a</title>
 </head>
 <body>
-	<div class="detail_barang">
-		<div class="gambar">
-		<img src="../assets/img/<?= $baju["img"]; ?>" width="150">
-		</div>
-		<div class="keterangan">
-			<p><?= $baju["nama_barang"];?></p>
-			<p><?= $baju["detail"];?></p>
-			<p><?= $baju["ukuran"];?></p>
-			<p><?= $baju["warna"];?></p>
-		</div>
+	<div class="container">
+		<table>
+			<div class="detail_barang">
+				<div class="gambar">
+					<img src="../assets/img/<?= $baju["img"]; ?>" width="150">
+				</div>
+				<div class="keterangan">
+					<p><?= $baju["nama_barang"];?></p>
+					<p><?= $baju["detail"];?></p>
+					<p><?= $baju["ukuran"];?></p>
+					<p><?= $baju["warna"];?></p>
+				</div>
 
-		<button class="tombol kembali"><a href="../index.php">Kembali</a></button>	
+				<button class="tombol kembali"><a href="../index.php">Kembali</a></button>	
+			</div>
+		</table>
+		
 	</div>
 </body>
 </html>

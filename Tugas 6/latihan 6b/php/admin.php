@@ -37,6 +37,10 @@
             <a href="tambah.php">Tambah Data</a>
         </div>
 
+        <div class="logout">
+            <a href="logout.php">Logout</a>
+        </div>
+
         <form class="search" action="" method="get">
             <div class="form-group">
                 <input type="text" class="form-control" name="keyword" autofocus>
