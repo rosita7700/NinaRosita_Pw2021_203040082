@@ -6,7 +6,7 @@
     }
         
     require 'functions.php';
-    include 'koneksi.php';
+    
 
     if(isset($_GET['cari'])) {
         $keyword = $_GET['keyword'];

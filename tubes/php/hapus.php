@@ -74,7 +74,7 @@
         </div>
         
         <div class="form-btn text-center">
-            <button type="submit" class="add-btn btn btn-primary btn-lg btn-block mb-1 mt-6" name="tambah">Tambah
+            <button type="submit" class="add-btn btn btn-primary btn-lg btn-block mb-1 mt-6" name="tambah">Hapus
                 Data!</button>
             <br>
             <button class="btn btn-secondary btn-lg">
